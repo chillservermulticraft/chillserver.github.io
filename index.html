@@ -9,11 +9,6 @@
   <style>
     @font-face {
       font-family: 'MultiCraft';
-      /*
-        FONT SETUP:
-        Place MultiCraftFont.ttf in the same folder as index.html.
-        The line below will load it automatically.
-      */
       src: url('MultiCraftFont.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
@@ -64,7 +59,6 @@
       pointer-events: none; z-index: 0;
     }
 
-    /* NAV */
     nav {
       position: sticky;
       top: 0; z-index: 100;
@@ -114,7 +108,6 @@
     .tab-btn:hover { color: var(--text); background: var(--surface2); }
     .tab-btn.active { color: var(--bg); background: var(--accent); }
 
-    /* MAIN */
     main {
       position: relative; z-index: 1;
       max-width: 860px;
@@ -130,14 +123,11 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── HOME ── */
     .hero-title {
       font-family: var(--font-mc);
       font-size: clamp(3rem, 9vw, 6rem);
       line-height: 1.05;
-      color: var(--text);
       margin-bottom: 1.2rem;
-      /* subtle gradient on text */
       background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -197,9 +187,7 @@
       line-height: 1.85;
       max-width: 580px;
     }
-    .intro-body p + p { margin-top: 1rem; }
 
-    /* ── TEAM ── */
     .section-header { margin-bottom: 2.5rem; }
 
     .section-title {
@@ -251,73 +239,35 @@
     }
     .member-card.owner .member-role { color: var(--warm); }
 
-    /* ── CONTACT ── */
-    .report-form {
+    .contact-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 2rem;
-      max-width: 540px;
+      padding: 2.5rem 2rem;
+      max-width: 420px;
+      text-align: center;
     }
 
-    .form-group { margin-bottom: 1.2rem; }
-
-    .form-group label {
-      display: block;
-      font-size: 0.77rem; font-weight: 800;
-      text-transform: uppercase; letter-spacing: 0.08em;
-      color: var(--muted); margin-bottom: 0.45rem;
+    .contact-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
     }
 
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text);
+    .contact-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--bg);
       font-family: var(--font);
-      font-size: 0.9rem; font-weight: 600;
-      padding: 0.65rem 0.9rem;
-      outline: none;
-      transition: border-color 0.2s;
-      appearance: none;
-    }
-    .form-group input::placeholder,
-    .form-group textarea::placeholder { color: var(--border); font-weight: 400; }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus { border-color: var(--accent); }
-    .form-group textarea { resize: vertical; min-height: 120px; }
-    .form-group select option { background: var(--surface); }
-
-    .submit-btn {
-      background: var(--accent); color: var(--bg);
-      border: none; border-radius: 50px;
-      font-family: var(--font); font-weight: 800;
-      font-size: 0.9rem; padding: 0.7rem 2rem;
-      cursor: pointer;
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
       transition: opacity 0.2s, transform 0.15s;
     }
-    .submit-btn:hover { opacity: 0.85; transform: translateY(-1px); }
-    .submit-btn:active { transform: translateY(0); }
-
-    .success-msg {
-      display: none;
-      background: rgba(168,218,220,0.1);
-      border: 1px solid var(--accent);
-      border-radius: 8px;
-      padding: 0.85rem 1.1rem;
-      color: var(--accent);
-      font-size: 0.875rem; font-weight: 700;
-      margin-top: 1rem;
-    }
-
-    .form-note {
-      font-size: 0.75rem; color: var(--muted);
-      margin-top: 1rem; line-height: 1.6;
-    }
+    .contact-btn:hover { opacity: 0.85; transform: translateY(-2px); }
 
     @media (max-width: 580px) {
       nav { padding: 0 1.25rem; }
@@ -343,42 +293,31 @@
 
 <main>
 
-  <!-- ════════════════════════════
-       HOME
-       ════════════════════════════ -->
+  <!-- HOME -->
   <section id="intro" class="section active">
 
     <h1 class="hero-title">Chill Server</h1>
 
-    <!-- SERVER CODE — edit the code value below -->
     <div class="hero-code">
       <span class="hero-code-label">Server Code</span>
-      <!-- START EDIT: Replace with your actual server code -->
       <span class="hero-code-value" id="serverCode">IUIOFJRN</span>
-      <!-- END EDIT -->
       <button class="copy-btn" onclick="copyCode()">Copy</button>
     </div>
 
     <div class="intro-divider"></div>
 
     <div class="intro-body">
-      <!-- START EDIT: Replace these paragraphs with your own intro text -->
-      <p>
-        Join our Server! IUIOFJRN
-      </p>
-      <!-- END EDIT -->
+      <p>Join our server! Use code <strong style="color:var(--accent2)">IUIOFJRN</strong> to hop in.</p>
     </div>
 
   </section>
 
-  <!-- ════════════════════════════
-       TEAM
-       ════════════════════════════ -->
+  <!-- TEAM -->
   <section id="team" class="section">
 
     <div class="section-header">
-      <h2 class="section-title">Granted players(</h2>
-      <p class="section-sub">Staffs/Admins</p>
+      <h2 class="section-title">Granted Players</h2>
+      <p class="section-sub">Staff &amp; Admins</p>
     </div>
 
     <div class="team-group">
@@ -411,9 +350,7 @@
 
   </section>
 
-  <!-- ════════════════════════════
-       CONTACT
-       ════════════════════════════ -->
+  <!-- CONTACT -->
   <section id="report" class="section">
 
     <div class="section-header">
@@ -421,55 +358,15 @@
       <p class="section-sub">Questions, concerns, or just want to reach out?</p>
     </div>
 
-    <!--
-      FORM SETUP (Formspree — free):
-        1. Go to https://formspree.io and sign up with itzmythicx@gmail.com
-        2. Create a new form → copy your form ID
-        3. Replace YOUR_FORMSPREE_ID below with it
-        Submissions will be forwarded to itzmythicx@gmail.com
-    -->
-    <form
-      class="report-form"
-      action="https://formspree.io/f/mnjbgbnn"
-      method="POST"
-      onsubmit="handleSubmit(event)"
-    >
-      <div class="form-group">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" name="name" placeholder="Your username" required />
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required />
-      </div>
-
-      <div class="form-group">
-        <label for="subject">Subject</label>
-        <select id="subject" name="subject">
-          <option value="general">General Inquiry</option>
-          <option value="bug">Bug Report</option>
-          <option value="appeal">Appeal</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="What's up?" required></textarea>
-      </div>
-
-      <!-- Hidden field so email goes to correct address -->
-      <input type="hidden" name="_replyto" value="itzmythicx@gmail.com" />
-
-      <button type="submit" class="submit-btn">Send it →</button>
-
-      <div class="success-msg" id="successMsg">
-        ✓ Thanks!
-      </div>
-
-      <p class="form-note">We will respond soon.</p>
-    </form>
+    <div class="contact-card">
+      <p>Have a question, report, or just want to reach out? Fill out our contact form and we'll get back to you soon.</p>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLScNp40OGekYFQvGH0PqdDGbnIYupUMlus8DTVrnO0b54m-lAw/viewform"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-btn"
+      >Open Contact Form →</a>
+    </div>
 
   </section>
 
@@ -490,35 +387,6 @@
       btn.textContent = 'Copied!';
       setTimeout(() => btn.textContent = 'Copy', 2000);
     });
-  }
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const form = e.target;
-    const btn = form.querySelector('.submit-btn');
-    const msg = document.getElementById('successMsg');
-
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' }
-      });
-      if (res.ok) {
-        form.reset();
-        msg.style.display = 'block';
-        btn.textContent = 'Sent ✓';
-      } else {
-        btn.textContent = 'Try again';
-        btn.disabled = false;
-      }
-    } catch {
-      btn.textContent = 'Try again';
-      btn.disabled = false;
-    }
   }
 </script>
 

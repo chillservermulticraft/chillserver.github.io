@@ -368,15 +368,13 @@
   }
 
   // Load team from team.json
-  const groupIcons = { owners: '👑', managers: '⭐', developers: '🛡️' };
-
   fetch('team.json')
     .then(r => r.json())
     .then(data => {
       const container = document.getElementById('team-container');
       Object.entries(data).forEach(([key, group]) => {
-        const icon = groupIcons[key] || '🔹';
-        const label = key.charAt(0).toUpperCase() + key.slice(1);
+        const icon = group.emoji ? group.emoji + ' ' : '';
+        const label = group.label || key.charAt(0).toUpperCase() + key.slice(1);
         const cards = group.members.map(m => `
           <div class="member-card">
             <div class="member-name">${m.name}</div>
@@ -384,7 +382,7 @@
           </div>`).join('');
         container.innerHTML += `
           <div class="team-group">
-            <div class="team-group-label">${icon} ${label}</div>
+            <div class="team-group-label">${icon}${label}</div>
             <div class="team-grid">${cards}</div>
           </div>`;
       });

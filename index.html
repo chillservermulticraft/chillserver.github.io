@@ -324,15 +324,7 @@
       <p class="section-sub">Staff &amp; Admins</p>
     </div>
 
-    <div class="team-group">
-      <div class="team-group-label">👑 Owners</div>
-      <div class="team-grid" id="owners-grid"></div>
-    </div>
-
-    <div class="team-group">
-      <div class="team-group-label">🛡️ Developers</div>
-      <div class="team-grid" id="developers-grid"></div>
-    </div>
+    <div id="team-container"></div>
 
   </section>
 
@@ -376,28 +368,29 @@
   }
 
   // Load team from team.json
+  const groupIcons = { owners: '👑', managers: '⭐', developers: '🛡️' };
+
   fetch('team.json')
     .then(r => r.json())
     .then(data => {
-      const ownersGrid = document.getElementById('owners-grid');
-      const devsGrid = document.getElementById('developers-grid');
-
-      data.owners.members.forEach(m => {
-        ownersGrid.innerHTML += `<div class="member-card" style="--role-color:${data.owners.color}">
-          <div class="member-name">${m.name}</div>
-          <div class="member-role" style="color:${data.owners.color}">${m.role}</div>
-        </div>`;
-      });
-
-      data.developers.members.forEach(m => {
-        devsGrid.innerHTML += `<div class="member-card" style="--role-color:${data.developers.color}">
-          <div class="member-name">${m.name}</div>
-          <div class="member-role" style="color:${data.developers.color}">${m.role}</div>
-        </div>`;
+      const container = document.getElementById('team-container');
+      Object.entries(data).forEach(([key, group]) => {
+        const icon = groupIcons[key] || '🔹';
+        const label = key.charAt(0).toUpperCase() + key.slice(1);
+        const cards = group.members.map(m => `
+          <div class="member-card">
+            <div class="member-name">${m.name}</div>
+            <div class="member-role" style="color:${group.color}">${m.role}</div>
+          </div>`).join('');
+        container.innerHTML += `
+          <div class="team-group">
+            <div class="team-group-label">${icon} ${label}</div>
+            <div class="team-grid">${cards}</div>
+          </div>`;
       });
     })
     .catch(() => {
-      document.getElementById('owners-grid').innerHTML = '<p style="color:var(--muted)">Could not load team data.</p>';
+      document.getElementById('team-container').innerHTML = '<p style="color:var(--muted)">Could not load team data.</p>';
     });
 </script>
 

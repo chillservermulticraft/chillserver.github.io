@@ -382,17 +382,17 @@
       const ownersGrid = document.getElementById('owners-grid');
       const devsGrid = document.getElementById('developers-grid');
 
-      data.owners.forEach(m => {
-        ownersGrid.innerHTML += `<div class="member-card owner">
+      data.owners.members.forEach(m => {
+        ownersGrid.innerHTML += `<div class="member-card" style="--role-color:${data.owners.color}">
           <div class="member-name">${m.name}</div>
-          <div class="member-role">${m.role}</div>
+          <div class="member-role" style="color:${data.owners.color}">${m.role}</div>
         </div>`;
       });
 
-      data.developers.forEach(m => {
-        devsGrid.innerHTML += `<div class="member-card">
+      data.developers.members.forEach(m => {
+        devsGrid.innerHTML += `<div class="member-card" style="--role-color:${data.developers.color}">
           <div class="member-name">${m.name}</div>
-          <div class="member-role">${m.role}</div>
+          <div class="member-role" style="color:${data.developers.color}">${m.role}</div>
         </div>`;
       });
     })

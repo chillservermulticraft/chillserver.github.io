@@ -13,7 +13,9 @@
     "emoji": "👑",
     "color": "#FF8C00",
     "members": [
-      { "name": "Astxn", "role": "Co-Owner" }
+      { "name": "Astxn", "role": "Co-Owner" },
+      { "name": "MultiCoolStudios", "role": "Co-Owner" },
+      { "name": "Covasius", "role": "Co-Owner" }
     ]
   },
   {
@@ -21,7 +23,6 @@
     "emoji": "⚒️",
     "color": "#00BFFF",
     "members": [
-      { "name": "MultiCoolStudios", "role": "Manager" },
       { "name": "Sugarbear", "role": "Manager" }
     ]
   },
@@ -30,7 +31,7 @@
     "emoji": "🔥",
     "color": "#FF3B3B",
     "members": [
-      { "name": "Covasius", "role": "Admin" }
+      
     ]
   },
   {

@@ -4,7 +4,8 @@
     "emoji": "👑",
     "color": "#FFD700",
     "members": [
-      { "name": "x9jm", "role": "Owner" }
+      { "name": "x9jm", "role": "Owner" },
+      { "name": "Astxn", "role": "Owner" }
     ]
   },
   {
@@ -12,7 +13,6 @@
     "emoji": "👑",
     "color": "#FF8C00",
     "members": [
-      { "name": "Astxn", "role": "Co-Owner" },
       { "name": "MultiCoolStudios", "role": "Co-Owner" },
       { "name": "Covasius", "role": "Co-Owner" }
     ]
@@ -68,7 +68,8 @@
       { "name": "_-AaMinA-_", "role": "Staff" },
       { "name": "Jake_the_crator", "role": "Staff" },
       { "name": "Sassafras", "role": "Staff" },
-      { "name": "YoursJules", "role": "Staff" }
+      { "name": "YoursJules", "role": "Staff" },
+      { "name": "AntonioZga9", "role": "Helper" },
     ]
   },
   {
@@ -76,7 +77,6 @@
     "emoji": "❗",
     "color": "#00eeff",
     "members": [
-      { "name": "AntonioZga9", "role": "Helper" },
       { "name": "Caelum", "role": "Helper" },
       { "name": "Hannabelle_", "role": "Helper" },
       { "name": "LingLing", "role": "Helper" },
